@@ -6,5 +6,6 @@ node {
     }
     stage('Get maven version') { 
         sh "${mvn} --version"
+        echo 'Hello World'
     }       
 }
