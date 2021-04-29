@@ -1,20 +1,13 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'maven363'
+    }
     stages {
         stage('Build') {
+            stage('get maven verion') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'mvn --version'
             }
         }
     }
