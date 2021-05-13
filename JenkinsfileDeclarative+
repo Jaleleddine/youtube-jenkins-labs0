@@ -16,10 +16,16 @@ pipeline {
         stage('Unit test') {
             steps {
                 sh 'mvn test'    
-                junit 'reports/**/*.xml'
+               
                 }
         }
         
+        stage('Test report') {
+            steps {
+                junit 'reports/**/*.xml'
+               
+                }
+           }
         }
       
     }
@@ -31,6 +37,8 @@ pipeline {
           }
       }
   }
+  
+   
         
         
         
