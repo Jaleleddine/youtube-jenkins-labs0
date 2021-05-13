@@ -30,8 +30,7 @@ pipeline {
                 sh 'mvn package -DskipTest'        
                 }
           }
-          
-          
+                   
           post {
         always {
             archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
